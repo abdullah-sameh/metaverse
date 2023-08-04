@@ -1,21 +1,15 @@
-import Title from '../components/Title'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { twMerge } from 'tailwind-merge'
+import Header from '../components/Header'
+
+import headset from '../assets/headset.svg'
 import planet1 from '../assets/planet-01.png'
 import planet2 from '../assets/planet-02.png'
 import planet3 from '../assets/planet-03.png'
 import planet4 from '../assets/planet-04.png'
 import planet5 from '../assets/planet-05.png'
-import { useState } from 'react'
-import { twMerge } from 'tailwind-merge'
-import headset from '../assets/headset.svg'
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-  },
-}
+import { fadeUp } from '../content'
 
 const imgContainer = {
   hidden: {},
@@ -39,7 +33,7 @@ const fadeInLeft = {
   },
 }
 
-const titleVarients = {
+const titleVariants = {
   hidden: {
     opacity: 0,
     transition: {
@@ -75,20 +69,24 @@ export default function World() {
 
   return (
     <div className='container py-[64px]'>
-      <Title text='The World' />
-      <motion.h3
-        variants={fadeUp}
+      <motion.header
+        variants={fadeUp(20)}
         initial='hidden'
         whileInView='visible'
-        className='text-[64px] font-black text-center mb-12'
+        className='text-center'
       >
-        Choose the world you want <br /> to explore
-      </motion.h3>
+        <Header
+          header='The World'
+          text='Choose the world you want to explore'
+          center={true}
+        />
+      </motion.header>
+
       <motion.div
         variants={imgContainer}
         initial='hidden'
         whileInView='visible'
-        className='flex gap-6'
+        className='flex gap-6 flex-col lg:flex-row'
       >
         {[...Array(5).keys()].map(i => {
           return (
@@ -96,8 +94,8 @@ export default function World() {
               variants={fadeInLeft}
               key={i}
               className={twMerge(
-                `h-[500px] relative cursor-pointer rounded-3xl overflow-hidden duration-75 basis-1/6`,
-                tabIndex === i ? 'basis-1/3' : ''
+                `lg:h-[500px] h-[75px] relative cursor-pointer rounded-3xl overflow-hidden duration-75 lg:basis-1/6`,
+                tabIndex === i ? 'lg:basis-1/3 h-[200px]' : ''
               )}
               onClick={() => setTabIndex(i)}
             >
@@ -108,14 +106,14 @@ export default function World() {
               />
 
               <motion.div
-                variants={titleVarients}
+                variants={titleVariants}
                 initial='hidden'
                 whileInView='visible'
                 className={twMerge(
-                  'absolute bottom-28 z-50 duration-75 -rotate-90',
+                  'absolute lg:bottom-28 bottom-0 left-0 z-50 duration-75 lg:-rotate-90',
                   tabIndex === i
-                    ? 'rotate-0 left-0 bottom-0 p-7 bg-black bg-opacity-70 w-full'
-                    : ''
+                    ? 'lg:rotate-0 h-[100%] lg:h-auto lg:left-0 lg:bottom-0 lg:p-7 p-3 bg-black bg-opacity-70 w-full'
+                    : 'bottom-4 left-4'
                 )}
               >
                 {tabIndex === i && (
@@ -123,7 +121,7 @@ export default function World() {
                     <div className='headset bg-base-content backdrop-blur-sm bg-opacity-25 rounded-3xl border-gray-400 border w-fit p-5'>
                       <img src={headset} alt='' />
                     </div>
-                    <p className=''>ENTER METAVERSE</p>
+                    <p>ENTER METAVERSE</p>
                   </header>
                 )}
 
