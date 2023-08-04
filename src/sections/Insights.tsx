@@ -26,7 +26,7 @@ export default function Insights() {
               <img
                 src={insight.imgUrl}
                 alt=''
-                className='w-[270px] h-[250px] rounded-3xl object-cover'
+                className='sm:w-[270px] h-[250px] w-[100%] rounded-3xl object-cover'
               />
             </header>
             <main className='flex flex-1 justify-between items-center'>
