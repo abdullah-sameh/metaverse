@@ -27,7 +27,6 @@ export default function LazyLoadImg({
       <img
         src={imgSrc}
         alt=''
-        loading='lazy'
         className={twMerge(
           stylingImg,
           'hidden opacity-0 transition-opacity duration-500',
