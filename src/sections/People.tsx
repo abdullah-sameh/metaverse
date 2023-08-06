@@ -4,7 +4,7 @@ import person1 from '../assets/people-01.png'
 import person2 from '../assets/people-02.png'
 import person3 from '../assets/people-03.png'
 import { motion } from 'framer-motion'
-import { containerVariant, fadeUp } from '../content'
+import { containerVariant, fadeUp } from '../motions/index'
 
 export default function People() {
   return (

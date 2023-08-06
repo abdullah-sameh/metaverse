@@ -9,7 +9,14 @@ import planet2 from '../assets/planet-02.png'
 import planet3 from '../assets/planet-03.png'
 import planet4 from '../assets/planet-04.png'
 import planet5 from '../assets/planet-05.png'
-import { fadeUp } from '../content'
+import smallPlanet1 from '../assets/small-imgs/planet-01.png'
+import smallPlanet2 from '../assets/small-imgs/planet-02.png'
+import smallPlanet3 from '../assets/small-imgs/planet-03.png'
+import smallPlanet4 from '../assets/small-imgs/planet-04.png'
+import smallPlanet5 from '../assets/small-imgs/planet-05.png'
+
+import { fadeUp } from '../motions/index'
+import LazyLoadImg from '../components/LazyLoadImg'
 
 const imgContainer = {
   hidden: {},
@@ -48,12 +55,13 @@ const titleVariants = {
   },
 }
 
-const getImg = (i: number) => {
-  if (i === 0) return planet1
-  if (i === 1) return planet2
-  if (i === 2) return planet3
-  if (i === 3) return planet4
-  if (i === 4) return planet5
+const getImg = (i: number): string[] => {
+  if (i === 0) return [planet1, smallPlanet1]
+  if (i === 1) return [planet2, smallPlanet2]
+  if (i === 2) return [planet3, smallPlanet3]
+  if (i === 3) return [planet4, smallPlanet4]
+  if (i === 4) return [planet5, smallPlanet5]
+  else return ['', '']
 }
 
 const headings = [
@@ -99,10 +107,11 @@ export default function World() {
               )}
               onClick={() => setTabIndex(i)}
             >
-              <img
-                className='h-full w-full object-cover'
-                src={getImg(i)}
-                alt=''
+              <LazyLoadImg
+                imgSrc={getImg(i)[0]}
+                loadImg={getImg(i)[1]}
+                stylingImg='h-full w-full object-cover'
+                stylingDiv='h-full w-full'
               />
 
               <motion.div

@@ -4,7 +4,7 @@ import twitter from '../assets/twitter.svg'
 import linkedin from '../assets/linkedin.svg'
 import instagram from '../assets/instagram.svg'
 import facebook from '../assets/facebook.svg'
-import { fadeUp } from '../content'
+import { fadeUp } from '../motions/index'
 
 export default function Footer() {
   return (

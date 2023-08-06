@@ -1,6 +1,8 @@
 import planet9 from '../assets/planet-09.png'
+import smallPlanet9 from '../assets/small-imgs/planet-09.png'
 import stamp from '../assets/stamp.png'
 import { motion } from 'framer-motion'
+import LazyLoadImg from '../components/LazyLoadImg'
 
 const fadeRight = {
   hidden: { opacity: 0, x: '-100%' },
@@ -45,10 +47,10 @@ export default function Code() {
         whileInView='visible'
         className='relative'
       >
-        <img
-          src={planet9}
-          alt=''
-          className='w-full lg:h-[610px] h-auto min-h-[210px] object-cover rounded-[40px]'
+        <LazyLoadImg
+          imgSrc={planet9}
+          loadImg={smallPlanet9}
+          stylingImg='w-full lg:h-[610px] h-auto min-h-[210px] object-cover rounded-[40px]'
         />
         <motion.img
           variants={pop}

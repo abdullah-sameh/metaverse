@@ -120,3 +120,24 @@
   background: #65c4fa;
   filter: blur(150px);
 }
+.loading-img-div::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: pulse 2.5s infinite;
+  background-color: rgba(255, 255, 255, 0.1);
+  inset: 0;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}

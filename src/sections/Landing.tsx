@@ -1,6 +1,8 @@
 import cover from '../assets/cover.png'
+import smallCover from '../assets/small-imgs/cover.png'
 import stamp from '../assets/stamp.png'
 import { motion } from 'framer-motion'
+import LazyLoadImg from '../components/LazyLoadImg'
 
 const containerVariant = {
   hidden: {},
@@ -67,10 +69,11 @@ export default function Landing() {
           variants={imgVariant}
           className='relative lg:-mt-3 img ml-10 md:ml-0'
         >
-          <img
-            src={cover}
-            alt=''
-            className='w-full h-[300px] lg:h-[500px] object-cover rounded-tl-[140px]'
+          <LazyLoadImg
+            imgSrc={cover}
+            loadImg={smallCover}
+            stylingDiv='h-[300px] lg:h-[500px]'
+            stylingImg='w-full h-full object-cover rounded-tl-[140px]'
           />
           <img
             src={stamp}

@@ -1,19 +1,9 @@
 import started from '../assets/get-started.png'
+import smallStarted from '../assets/small-imgs/get-started.png'
 import Header from '../components/Header'
 import { motion } from 'framer-motion'
-
-const imgVarients = {
-  hidden: { rotate: 120, x: '-100%' },
-  visible: {
-    rotate: 0,
-    x: 0,
-    transition: {
-      type: 'spring',
-      duration: 1.8,
-      delay: 0.5,
-    },
-  },
-}
+import { imgVarients } from '../motions'
+import LazyLoadImg from '../components/LazyLoadImg'
 
 const FadeRight = {
   hidden: { opacity: 0, x: '100%' },
@@ -39,15 +29,20 @@ export default function Started() {
     <div className='relative container my-[64px] flex lg:flex-row flex-col gap-8'>
       <div className='awsomeColor3'></div>
       <motion.div
-        variants={imgVarients}
+        variants={imgVarients('left')}
         initial='hidden'
         whileInView='visible'
         className='left flex flex-[1] justify-center items-center'
       >
-        <img
+        {/* <img
           src={started}
           alt=''
           className='max-w-3xl h-[90%] w-[90%] object-contain'
+        /> */}
+        <LazyLoadImg
+          imgSrc={started}
+          loadImg={smallStarted}
+          stylingImg='max-w-3xl h-[90%] w-[90%] object-contain'
         />
       </motion.div>
 

@@ -1,7 +1,9 @@
 import Header from '../components/Header'
-import { containerVariant, fadeUp, insights } from '../content'
+import { insights } from '../content'
 import arrow from '../assets/arrow.svg'
 import { motion } from 'framer-motion'
+import { containerVariant, fadeUp } from '../motions/index'
+import LazyLoadImg from '../components/LazyLoadImg'
 
 export default function Insights() {
   return (
@@ -23,10 +25,10 @@ export default function Insights() {
             className='flex gap-4 sm:flex-row flex-col'
           >
             <header>
-              <img
-                src={insight.imgUrl}
-                alt=''
-                className='sm:w-[270px] h-[250px] w-[100%] rounded-3xl object-cover'
+              <LazyLoadImg
+                imgSrc={insight.imgUrl}
+                loadImg={insight.imgSmall}
+                stylingImg='sm:w-[270px] h-[250px] w-[100%] rounded-3xl object-cover'
               />
             </header>
             <main className='flex flex-1 justify-between items-center'>

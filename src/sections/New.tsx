@@ -3,38 +3,14 @@ import headset from '../assets/headset.svg'
 import vrpano from '../assets/vrpano.svg'
 import { motion } from 'framer-motion'
 import Header from '../components/Header'
-
-const imgVarients = {
-  hidden: { rotate: 120, x: '100%' },
-  visible: {
-    rotate: 0,
-    x: 0,
-    transition: {
-      type: 'spring',
-      duration: 1.8,
-      delay: 0.5,
-    },
-  },
-}
-
-const FadeLeft = {
-  hidden: { opacity: 0, x: '-100%' },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: 'tween',
-      duration: 1,
-      ease: 'easeOut',
-    },
-  },
-}
+import { fadeX } from '../motions/index'
+import { imgVarients } from '../motions/index'
 
 export default function New() {
   return (
     <div className='relative container my-[64px] flex flex-col sm:flex-row gap-16'>
       <motion.div
-        variants={FadeLeft}
+        variants={fadeX('-100%')}
         initial='hidden'
         whileInView='visible'
         className='flex flex-1 flex-col'
@@ -75,7 +51,7 @@ export default function New() {
       </motion.div>
 
       <motion.div
-        variants={imgVarients}
+        variants={imgVarients('right')}
         initial='hidden'
         whileInView='visible'
         className='flex-1 flex justify-center items-center'
