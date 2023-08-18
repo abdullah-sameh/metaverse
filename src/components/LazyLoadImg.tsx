@@ -1,4 +1,4 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 interface props {
@@ -14,18 +14,25 @@ export default function LazyLoadImg({
   stylingImg,
   stylingDiv,
 }: props) {
-  // const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   return (
     <div className={stylingDiv}>
-      <LazyLoadImage
-        alt={'no image found'}
-        className={stylingImg}
-        src={imgSrc}
-        placeholderSrc={loadImg}
-        visibleByDefault={false}
-        wrapperClassName={twMerge(stylingImg, 'loading-img')}
-      />
+      {isLoaded ? (
+        <img
+          src={imgSrc}
+          alt={'no image found'}
+          className={stylingImg}
+          onLoad={() => setIsLoaded(true)}
+        />
+      ) : (
+        <img
+          src={loadImg}
+          alt={'no image found'}
+          className={twMerge(stylingImg, 'loading-img')}
+          onLoad={() => setIsLoaded(true)}
+        />
+      )}
     </div>
   )
 }

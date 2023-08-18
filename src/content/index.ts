@@ -76,22 +76,3 @@ export const insights = [
       'Quam quisque id diam vel quam elementum. Viverra nam libero justo laoreet sit amet cursus sit. Mauris in aliquam sem',
   },
 ]
-
-export const socials = [
-  {
-    name: 'twitter',
-    url: '/twitter.svg',
-  },
-  {
-    name: 'linkedin',
-    url: '/linkedin.svg',
-  },
-  {
-    name: 'instagram',
-    url: '/instagram.svg',
-  },
-  {
-    name: 'facebook',
-    url: '/facebook.svg',
-  },
-]

@@ -145,3 +145,12 @@
 .loading-img {
   backdrop-filter: blur(10px);
 }
+.nav-content {
+  visibility: hidden;
+  clip-path: circle(23px at 50% 0%);
+  transition: all 0.2s ease-in-out;
+}
+.nav-content.opened {
+  visibility: visible;
+  clip-path: circle(100%);
+}

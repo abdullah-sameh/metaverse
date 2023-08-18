@@ -55,7 +55,7 @@ export default function Landing() {
     >
       <motion.header
         variants={headerVariant}
-        className='relative z-50 text-center pt-20 text-[44px] sm:text-[100px] xl:text-[144px] font-bold leading-none'
+        className='relative z-30 text-center pt-20 text-[44px] sm:text-[100px] xl:text-[144px] font-bold leading-none'
       >
         <motion.h1 variants={headerChildVariant}>METAVERSE</motion.h1>
         <motion.h1 variants={headerChildVariant}>
