@@ -23,6 +23,7 @@ export default function LazyLoadImg({
         className={stylingImg}
         src={imgSrc}
         placeholderSrc={loadImg}
+        visibleByDefault={false}
         wrapperClassName={twMerge(stylingImg, 'loading-img')}
       />
     </div>
