@@ -1,4 +1,4 @@
-import cover from '../assets/cover.png'
+import cover from '../assets/cover.webp'
 import smallCover from '../assets/small-imgs/cover.png'
 import stamp from '../assets/stamp.png'
 import { motion } from 'framer-motion'

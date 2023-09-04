@@ -1,27 +1,27 @@
 export const exploreWorlds = [
   {
     id: 'world-1',
-    imgUrl: '/planet-01.png',
+    imgUrl: '/planet-01.webp',
     title: 'The Hogwarts',
   },
   {
     id: 'world-2',
-    imgUrl: '/planet-02.png',
+    imgUrl: '/planet-02.webp',
     title: 'The Upside Down',
   },
   {
     id: 'world-3',
-    imgUrl: '/planet-03.png',
+    imgUrl: '/planet-03.webp',
     title: 'Kadirojo Permai',
   },
   {
     id: 'world-4',
-    imgUrl: '/planet-04.png',
+    imgUrl: '/planet-04.webp',
     title: 'Paradise Island',
   },
   {
     id: 'world-5',
-    imgUrl: '/planet-05.png',
+    imgUrl: '/planet-05.webp',
     title: 'Hawkins Labs',
   },
 ]
@@ -46,9 +46,9 @@ export const newFeatures = [
       'In the latest update, your eyes are narrow, making the world more realistic than ever',
   },
 ]
-import planet6 from '../assets/planet-06.png'
-import planet7 from '../assets/planet-07.png'
-import planet8 from '../assets/planet-08.png'
+import planet6 from '../assets/planet-06.webp'
+import planet7 from '../assets/planet-07.webp'
+import planet8 from '../assets/planet-08.webp'
 import smallPlanet6 from '../assets/small-imgs/planet-06.png'
 import smallPlanet7 from '../assets/small-imgs/planet-07.png'
 import smallPlanet8 from '../assets/small-imgs/planet-08.png'

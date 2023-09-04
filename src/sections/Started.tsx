@@ -1,4 +1,4 @@
-import started from '../assets/get-started.png'
+import started from '../assets/get-started.webp'
 import Header from '../components/Header'
 import { motion } from 'framer-motion'
 import { imgVarients } from '../motions'

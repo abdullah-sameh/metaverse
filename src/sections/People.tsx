@@ -1,8 +1,8 @@
 import Header from '../components/Header'
 import map from '../assets/map.png'
-import person1 from '../assets/people-01.png'
-import person2 from '../assets/people-02.png'
-import person3 from '../assets/people-03.png'
+import person1 from '../assets/people-01.webp'
+import person2 from '../assets/people-02.webp'
+import person3 from '../assets/people-03.webp'
 import { motion } from 'framer-motion'
 import { containerVariant, fadeUp } from '../motions/index'
 
