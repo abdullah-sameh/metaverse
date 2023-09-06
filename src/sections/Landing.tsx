@@ -1,6 +1,6 @@
 import cover from '../assets/cover.webp'
 import smallCover from '../assets/small-imgs/cover.png'
-import stamp from '../assets/stamp.png'
+import stamp from '../assets/stamp.webp'
 import { motion } from 'framer-motion'
 import LazyLoadImg from '../components/LazyLoadImg'
 

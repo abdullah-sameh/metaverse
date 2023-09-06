@@ -1,6 +1,6 @@
 import planet9 from '../assets/planet-09.webp'
 import smallPlanet9 from '../assets/small-imgs/planet-09.png'
-import stamp from '../assets/stamp.png'
+import stamp from '../assets/stamp.webp'
 import { motion } from 'framer-motion'
 import LazyLoadImg from '../components/LazyLoadImg'
 

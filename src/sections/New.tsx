@@ -1,4 +1,4 @@
-import whatsnew from '../assets/whats-new.png'
+import whatsnew from '../assets/whats-new.webp'
 import headset from '../assets/headset.svg'
 import vrpano from '../assets/vrpano.svg'
 import { motion } from 'framer-motion'
